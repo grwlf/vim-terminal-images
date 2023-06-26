@@ -220,6 +220,9 @@ function! s:FindBestPosition(win_width, line_widths, line, cols, rows) abort
 
     let best_line = a:line + best_offset
 
+    " NERDTree hack
+    let best_cols = best_cols - 1
+
     if best_column >= a:win_width || best_rows <= 0 || best_cols <= 0
         return []
     endif
